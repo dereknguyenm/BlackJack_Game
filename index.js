@@ -22,9 +22,6 @@ function startGame()
         message = "You're out of the game! 😭"
         isAlive = false
     }
+
+    console.log(message)
 }
-
-
-
-// 3. Log it out!
-console.log(message)
