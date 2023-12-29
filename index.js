@@ -9,6 +9,7 @@ let isAlive = true
 
 let message = ""
 let messageEl = document.getElementById("message-el")
+let cardEl = document.getElementById("card-el")
 
 // another more powerful tool is using querySelector instead of get ElementbyID
 // the . means for a class and the # means by ID
@@ -17,7 +18,7 @@ let sumEl = document.querySelector(".sum-el")
 
 function startGame()
 {
-    // 2. Reassign the message variable to the string we're logging out
+    cardEl.textContent = "Cards: " + firstCard + " , " + secondCard
     sumEl.textContent = "Sum:" + sum
     if (sum <= 20) {
         message = "Do you want to draw a new card?"
@@ -30,4 +31,14 @@ function startGame()
     }
 
     messageEl.textContent = message
+}
+
+function newCard()
+{
+    let newCard = 8
+
+    //Adds new card to sum
+    sum += newCard
+
+    startGame()
 }
