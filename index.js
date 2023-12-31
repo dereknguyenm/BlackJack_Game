@@ -18,6 +18,12 @@ let sumEl = document.querySelector(".sum-el")
 
 function startGame()
 {
+    renderGame()
+}
+
+
+function renderGame()
+{
     cardEl.textContent = "Cards: " + firstCard + " , " + secondCard
     sumEl.textContent = "Sum:" + sum
     if (sum <= 20) {
@@ -36,9 +42,8 @@ function startGame()
 function newCard()
 {
     let newCard = 8
-
     //Adds new card to sum
     sum += newCard
 
-    startGame()
+    renderGame()
 }
