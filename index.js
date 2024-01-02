@@ -1,7 +1,7 @@
 // 1. Create two variables, firstCard and secondCard.
 // Set their values to a random number between 2-11
-let firstCard = 2
-let secondCard = 11
+let firstCard = getRandomCard()
+let secondCard = getRandomCard()
 let cards = [firstCard, secondCard]
 let sum = firstCard + secondCard
 
@@ -15,6 +15,12 @@ let cardEl = document.getElementById("card-el")
 // another more powerful tool is using querySelector instead of get ElementbyID
 // the . means for a class and the # means by ID
 let sumEl = document.querySelector(".sum-el")
+
+function getRandomCard()
+{
+    // ADD More to random 1-13
+    return Math.random()
+}
 
 
 function startGame()
@@ -30,8 +36,6 @@ function renderGame()
     {
         cardEl.textContent += cards[i] + " , "
     }
-
-    console.log(cardEl)
 
     sumEl.textContent = "Sum:" + sum
     if (sum <= 20) {
@@ -49,12 +53,9 @@ function renderGame()
 
 function newCard()
 {
-    let newCard = 8
-    //Adds new card to sum
-    sum += newCard
-
-    //Push newCard into hand
-    cards.push(newCard)
+    let newCard = getRandomCard()
+    sum += newCard         //Adds new card to sum
+    cards.push(newCard)    //Push newCard into hand
 
     renderGame()
 }
